@@ -1,1 +1,4 @@
-# motius-super-app
+# Motius Super App
+
+## Working Hours
+2016/04/26 - 1h - Initial Project Setup (git, icon, android studio code gen with adaptations)
