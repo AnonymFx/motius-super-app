@@ -9,6 +9,6 @@
     <string name="login_username_hint">A crazy name</string>
     <string name="login_username_password">An even crazier password</string>
     <string name="button_login">Login</string>
-    <string name="login_message">A snap, someone does not want you to login apparently. :(</string>
+    <string name="login_message">Oh snap, someone does not want you to login apparently. :(</string>
     <string name="fab_message">OMG! It\'s a FAB! So much material design! FABFABFABFAB</string>
 </resources>
