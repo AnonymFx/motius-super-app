@@ -2,4 +2,13 @@
     <string name="app_name">Motius Super App</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login_headline">Motius Login</string>
+    <string name="login_desc">Hey, welcome to my super cool Motius App. You can discover a lot of stuff around here ;)</string>
+    <string name="login_username_hint">A crazy name</string>
+    <string name="login_username_password">An even crazier password</string>
+    <string name="button_login">Login</string>
+    <string name="login_message">A snap, someone does not want you to login apparently. :(</string>
+    <string name="fab_message">OMG! It\'s a FAB! So much material design! FABFABFABFAB</string>
 </resources>
