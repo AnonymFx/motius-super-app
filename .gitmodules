@@ -1,0 +1,3 @@
+[submodule "MotiusSuperApp/volley"]
+	path = MotiusSuperApp/volley
+	url = https://android.googlesource.com/platform/frameworks/volley
