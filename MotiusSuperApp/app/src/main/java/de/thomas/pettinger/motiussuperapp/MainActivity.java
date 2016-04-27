@@ -115,6 +115,8 @@ public class MainActivity extends AppCompatActivity {
                     return LoginFragment.newInstance();
                 case 1:
                     return UsecaseFragment.newInstance();
+                case 2:
+                    return ParrotFragment.newInstance();
                 default:
                     return PlaceholderFragment.newInstance(position + 1);
             }
@@ -134,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
                 case 1:
                     return getString(R.string.tab_use_cases_heading);
                 case 2:
-                    return getString(R.string.tab_others_heading);
+                    return getString(R.string.tab_parrot_heading);
             }
             return null;
         }

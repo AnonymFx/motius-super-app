@@ -15,4 +15,7 @@
     <string name="tab_use_cases_heading">Use cases</string>
     <string name="tab_others_heading">Others</string>
     <string name="listitem_icon_desc">Motius icon</string>
+    <string name="tab_parrot_heading">Parrot</string>
+    <string name="parrot_hint">Enter text and touch the parrot :)</string>
+    <string name="parrot_default">Hi, I\\\'m your lovely parrot.</string>
 </resources>
