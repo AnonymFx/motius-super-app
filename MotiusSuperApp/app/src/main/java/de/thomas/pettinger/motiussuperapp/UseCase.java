@@ -1,5 +1,8 @@
 package de.thomas.pettinger.motiussuperapp;
 
+/**
+ * A DAO for the data received from the Motius API
+ */
 public class UseCase {
 
     private String mTitle;
@@ -14,6 +17,9 @@ public class UseCase {
         return mBody;
     }
 
+    /**
+     * Returns the first 250 characters of the body
+     */
     public String getBodyMax250() {
         if (mBody.length() > 250) {
             String formattedBody = mBody.substring(0, 250);

@@ -62,7 +62,8 @@ public class UseCaseFragment extends Fragment implements UseCaseApi.ApiListener 
         switch (requestCode) {
             case PERMISSION_REQUEST_INTERNET: {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    mUseCaseApi.loadUsecases();
+                    //If the Internet permission was newly granted, load the use cases from the Motius API
+                    mUseCaseApi.loadUseCases();
                 }
             }
         }
@@ -81,22 +82,25 @@ public class UseCaseFragment extends Fragment implements UseCaseApi.ApiListener 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(context));
 
         //Request the internet permission
-        getUsecasesFromApi();
+        getUseCasesFromApi();
 
         return view;
     }
 
-    private void getUsecasesFromApi() {
+    private void getUseCasesFromApi() {
+        //Check dynamically for the internet permission on devices SDK >= 23
         if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.INTERNET) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{Manifest.permission.INTERNET}, PERMISSION_REQUEST_INTERNET);
         } else {
-            mUseCaseApi.loadUsecases();
+            //If the permission was already granted before, load the use cases from the Motius API
+            mUseCaseApi.loadUseCases();
         }
     }
 
 
     @Override
     public void onResponse(List<UseCase> useCases) {
+        //Motius API call was successful -> show list with the corresponding items
         UseCaseRecyclerViewAdapter newAdapter = new UseCaseRecyclerViewAdapter(useCases);
         mRecyclerView.setAdapter(newAdapter);
         mProgressBar.setVisibility(View.GONE);
@@ -105,6 +109,7 @@ public class UseCaseFragment extends Fragment implements UseCaseApi.ApiListener 
 
     @Override
     public void onError() {
+        //Motius API call went wrong -> show an error message
         Toast.makeText(getContext(), getString(R.string.api_error_message), Toast.LENGTH_SHORT).show();
     }
 }

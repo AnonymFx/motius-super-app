@@ -16,6 +16,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class that provides access to the Motius API
+ */
 public class UseCaseApi {
 
     public static final String API_URL = "https://www.motius.de/api/usecases/";
@@ -24,15 +27,16 @@ public class UseCaseApi {
 
     private RequestQueue mRequestQueue;
     private ApiListener mApiListener;
-    private Context mContext;
 
     public UseCaseApi(Context context, ApiListener listener) {
-        mContext = context;
-        mRequestQueue = Volley.newRequestQueue(mContext);
+        mRequestQueue = Volley.newRequestQueue(context);
         mApiListener = listener;
     }
 
-    public void loadUsecases() {
+    /**
+     * Load all use cases from the Motius API
+     */
+    public void loadUseCases() {
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, API_URL, null, new Response.Listener<JSONArray>() {
 
             @Override
@@ -70,9 +74,11 @@ public class UseCaseApi {
         return new UseCase(title, body);
     }
 
+    /**
+     * Interface for receiving the data of the API call
+     */
     public interface ApiListener {
         void onResponse(List<UseCase> useCases);
-
         void onError();
     }
 }

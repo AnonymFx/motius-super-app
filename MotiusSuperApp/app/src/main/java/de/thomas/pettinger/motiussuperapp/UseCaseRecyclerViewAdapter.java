@@ -9,6 +9,9 @@ import android.widget.Toast;
 
 import java.util.List;
 
+/**
+ * Adapter class for the use case list
+ */
 public class UseCaseRecyclerViewAdapter extends RecyclerView.Adapter<UseCaseRecyclerViewAdapter.ViewHolder> {
 
     private final List<UseCase> mValues;
@@ -30,6 +33,7 @@ public class UseCaseRecyclerViewAdapter extends RecyclerView.Adapter<UseCaseRecy
         holder.mTitleView.setText(mValues.get(position).getTitle());
         holder.mBodyView.setText(mValues.get(position).getBodyMax250());
 
+        //Set OnClickListener for the list items
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

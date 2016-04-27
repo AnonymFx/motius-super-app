@@ -12,9 +12,7 @@ import android.widget.Toast;
 
 
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link LoginFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * Fragment for the first tab of the TabLayout
  */
 public class LoginFragment extends Fragment{
 
@@ -25,7 +23,7 @@ public class LoginFragment extends Fragment{
 
     /**
      * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
+     * this fragment.
      *
      * @return A new instance of fragment LoginFragment.
      */
@@ -42,6 +40,7 @@ public class LoginFragment extends Fragment{
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        //Set the OnClickListener for the login button
         Button button = (Button)getView().findViewById(R.id.button_login);
         button.setOnClickListener(new View.OnClickListener() {
             @Override

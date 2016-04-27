@@ -16,9 +16,7 @@ import java.util.Locale;
 
 
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link ParrotFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * Fragment for the third tab of the TabLayout
  */
 public class ParrotFragment extends Fragment {
 
@@ -43,12 +41,14 @@ public class ParrotFragment extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
+        //Shutdown TTS when App is paused
         mTts.shutdown();
     }
 
     @Override
     public void onResume() {
         super.onResume();
+        //Init TTS
         mTts = new TextToSpeech(getContext(), new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
@@ -62,9 +62,11 @@ public class ParrotFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        //Assign views
         ImageButton parrotButton = (ImageButton) getView().findViewById(R.id.parrot);
         final EditText parrotEditText = (EditText) getView().findViewById(R.id.parrot_text);
 
+        //Set OnClickListener for the parrot
         parrotButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
