@@ -2,7 +2,7 @@
 
 ## Set-up
 1) Clone the repository<br/>
-2) In the repository folder execute "git submodules init" and "git submodules update" to pull the volley library<br/>
+2) In the repository folder execute "git submodule init" and "git submodule update" to pull the volley library<br/>
 3) Open the MotiusSuperApp folder with Android Studio<br/>
 
 ## Volley
