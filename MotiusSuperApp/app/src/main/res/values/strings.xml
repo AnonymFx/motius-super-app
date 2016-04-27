@@ -11,4 +11,8 @@
     <string name="button_login">Login</string>
     <string name="login_message">Oh snap, someone does not want you to login apparently. :(</string>
     <string name="fab_message">OMG! It\'s a FAB! So much material design! FABFABFABFAB</string>
+    <string name="tab_login_heading">Login</string>
+    <string name="tab_use_cases_heading">Use cases</string>
+    <string name="tab_others_heading">Others</string>
+    <string name="listitem_icon_desc">Motius icon</string>
 </resources>
