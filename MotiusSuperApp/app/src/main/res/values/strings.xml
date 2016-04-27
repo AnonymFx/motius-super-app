@@ -9,7 +9,7 @@
     <string name="login_username_hint">A crazy name</string>
     <string name="login_username_password">An even crazier password</string>
     <string name="button_login">Login</string>
-    <string name="login_message">Oh snap, someone does not want you to login apparently. :(</string>
+    <string name="login_message">Hello Motius</string>
     <string name="fab_message">OMG! It\'s a FAB! So much material design! FABFABFABFAB</string>
     <string name="tab_login_heading">Login</string>
     <string name="tab_use_cases_heading">Use cases</string>
@@ -18,4 +18,6 @@
     <string name="tab_parrot_heading">Parrot</string>
     <string name="parrot_hint">Touch the parrot :)\n(If nothing happens, turn up your volume)</string>
     <string name="parrot_default">Hi, I\'m your lovely parrot. I\'ll repeat everything you enter in the text field below.</string>
+    <string name="list_item_on_click_message">Well, that\'s a fascinating usecase :)</string>
+    <string name="api_error_message">Wow! Where are you? I can\'t connect to Motius here...</string>
 </resources>

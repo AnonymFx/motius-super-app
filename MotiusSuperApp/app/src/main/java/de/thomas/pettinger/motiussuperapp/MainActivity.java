@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
@@ -54,12 +55,11 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), getString(R.string.fab_message), Toast.LENGTH_LONG).show();
+                Toast.makeText(view.getContext(), getString(R.string.fab_message), Toast.LENGTH_SHORT).show();
             }
         });
 
     }
-
 
     /**
      * A placeholder fragment containing a simple view.
@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
                 case 0:
                     return LoginFragment.newInstance();
                 case 1:
-                    return UsecaseFragment.newInstance();
+                    return UseCaseFragment.newInstance();
                 case 2:
                     return ParrotFragment.newInstance();
                 default:

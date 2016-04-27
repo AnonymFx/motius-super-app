@@ -5,16 +5,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
-import de.thomas.pettinger.motiussuperapp.dummy.DummyContent.DummyItem;
+public class UseCaseRecyclerViewAdapter extends RecyclerView.Adapter<UseCaseRecyclerViewAdapter.ViewHolder> {
 
-public class UsecaseRecyclerViewAdapter extends RecyclerView.Adapter<UsecaseRecyclerViewAdapter.ViewHolder> {
+    private final List<UseCase> mValues;
 
-    private final List<DummyItem> mValues;
-
-    public UsecaseRecyclerViewAdapter(List<DummyItem> items) {
+    public UseCaseRecyclerViewAdapter(List<UseCase> items) {
         mValues = items;
     }
 
@@ -28,13 +27,13 @@ public class UsecaseRecyclerViewAdapter extends RecyclerView.Adapter<UsecaseRecy
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).id);
-        holder.mContentView.setText(mValues.get(position).content);
+        holder.mTitleView.setText(mValues.get(position).getTitle());
+        holder.mBodyView.setText(mValues.get(position).getBodyMax250());
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Toast.makeText(v.getContext(), v.getContext().getString(R.string.list_item_on_click_message), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -46,20 +45,21 @@ public class UsecaseRecyclerViewAdapter extends RecyclerView.Adapter<UsecaseRecy
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
-        public final TextView mIdView;
-        public final TextView mContentView;
-        public DummyItem mItem;
+        public final TextView mTitleView;
+        public final TextView mBodyView;
+        public UseCase mItem;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.listitem_title);
-            mContentView = (TextView) view.findViewById(R.id.listitem_desc);
+            mTitleView = (TextView) view.findViewById(R.id.listitem_title);
+            mBodyView = (TextView) view.findViewById(R.id.listitem_desc);
+
         }
 
         @Override
         public String toString() {
-            return super.toString() + " '" + mContentView.getText() + "'";
+            return super.toString() + " '" + mBodyView.getText() + "'";
         }
     }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="72dp">
+    android:layout_height="96dp">
 
     <View
         android:id="@+id/listitem_vert_divider"
@@ -18,7 +18,7 @@
         <ImageView
             android:id="@+id/listitem_icon"
             android:layout_width="72dp"
-            android:layout_height="match_parent"
+            android:layout_height="72dp"
             android:contentDescription="@string/listitem_icon_desc"
             android:padding="8dp"
             android:src="@mipmap/ic_launcher" />
@@ -30,20 +30,25 @@
 
             <TextView
                 android:id="@+id/listitem_title"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/text_margin"
-                android:textAppearance="?attr/textAppearanceListItem" />
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/listitem_desc"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/text_margin"
                 android:layout_marginEnd="@dimen/text_margin"
                 android:layout_marginLeft="@dimen/text_margin"
                 android:layout_marginRight="@dimen/text_margin"
                 android:layout_marginStart="@dimen/text_margin"
+                android:ellipsize="end"
+                android:maxLines="2"
                 android:textAppearance="?attr/textAppearanceListItem" />
         </LinearLayout>
     </LinearLayout>
