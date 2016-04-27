@@ -16,6 +16,6 @@
     <string name="tab_others_heading">Others</string>
     <string name="listitem_icon_desc">Motius icon</string>
     <string name="tab_parrot_heading">Parrot</string>
-    <string name="parrot_hint">Enter text and touch the parrot :)</string>
-    <string name="parrot_default">Hi, I\\\'m your lovely parrot.</string>
+    <string name="parrot_hint">Touch the parrot :)\n(If nothing happens, turn up your volume)</string>
+    <string name="parrot_default">Hi, I\'m your lovely parrot. I\'ll repeat everything you enter in the text field below.</string>
 </resources>
