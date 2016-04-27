@@ -30,6 +30,16 @@ public class ParrotFragment extends Fragment {
         // Required empty public constructor
     }
 
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @return A new instance of fragment ParrotFragment.
+     */
+    public static ParrotFragment newInstance() {
+        return new ParrotFragment();
+    }
+
     @Override
     public void onPause() {
         super.onPause();
@@ -70,40 +80,6 @@ public class ParrotFragment extends Fragment {
                 }
             }
         });
-    }
-
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        ImageButton parrotButton = (ImageButton) getView().findViewById(R.id.parrot);
-        final EditText parrotEditText = (EditText) getView().findViewById(R.id.parrot_text);
-
-        parrotButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String parrotText = getString(R.string.parrot_default);
-                String newText = parrotEditText.getText().toString();
-                if (!"".equals(newText)) {
-                    parrotText = newText;
-                }
-                if (Build.VERSION.SDK_INT >= 21) {
-                    mTts.speak(parrotText, TextToSpeech.QUEUE_FLUSH, null, TTS_UTTERANCE_ID);
-                } else {
-                    mTts.speak(parrotText, TextToSpeech.QUEUE_FLUSH, null);
-                }
-            }
-        });
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @return A new instance of fragment ParrotFragment.
-     */
-    public static ParrotFragment newInstance() {
-        return new ParrotFragment();
     }
 
     @Override
